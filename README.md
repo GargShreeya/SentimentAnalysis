@@ -4,74 +4,74 @@ NLP Project - Sentiment Analysis by finetuning BERT pretrained model </br>
 **Dataset:** https://huggingface.co/datasets/stanfordnlp/imdb
 **BERT Architechture**</br>
 ![image](https://github.com/user-attachments/assets/ba232e6d-66ee-477f-bbc5-859f66d40669) </br>
-BertForSequenceClassification(
-  (bert): BertModel(
-    (embeddings): BertEmbeddings(
-      (word_embeddings): Embedding(30522, 768, padding_idx=0)
-      (position_embeddings): Embedding(512, 768)
-      (token_type_embeddings): Embedding(2, 768)
-      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
-      (dropout): Dropout(p=0.1, inplace=False)
-    )
-    (encoder): BertEncoder(
-      (layer): ModuleList(
-        (0-11): 12 x BertLayer(
-          (attention): BertAttention(
-            (self): BertSelfAttention(
-              (query): Linear(in_features=768, out_features=768, bias=True)
-              (key): Linear(in_features=768, out_features=768, bias=True)
-              (value): Linear(in_features=768, out_features=768, bias=True)
-              (dropout): Dropout(p=0.1, inplace=False)
-            )
-            (output): BertSelfOutput(
-              (dense): Linear(in_features=768, out_features=768, bias=True)
-              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
-              (dropout): Dropout(p=0.1, inplace=False)
-            )
-          )
-          (intermediate): BertIntermediate(
-            (dense): Linear(in_features=768, out_features=3072, bias=True)
-            (intermediate_act_fn): GELUActivation()
-          )
-          (output): BertOutput(
-            (dense): Linear(in_features=3072, out_features=768, bias=True)
-            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
-            (dropout): Dropout(p=0.1, inplace=False)
-          )
-        )
-      )
-    )
-    (pooler): BertPooler(
-      (dense): Linear(in_features=768, out_features=768, bias=True)
-      (activation): Tanh()
-    )
-  )
-  (dropout): Dropout(p=0.1, inplace=False)
-  (classifier): Linear(in_features=768, out_features=2, bias=True)
+BertForSequenceClassification(</br>
+  (bert): BertModel(</br>
+    (embeddings): BertEmbeddings(</br>
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)</br>
+      (position_embeddings): Embedding(512, 768)</br>
+      (token_type_embeddings): Embedding(2, 768)</br>
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)</br>
+      (dropout): Dropout(p=0.1, inplace=False)</br>
+    )</br>
+    (encoder): BertEncoder(</br>
+      (layer): ModuleList(</br>
+        (0-11): 12 x BertLayer(</br>
+          (attention): BertAttention(</br>
+            (self): BertSelfAttention(</br>
+              (query): Linear(in_features=768, out_features=768, bias=True)</br>
+              (key): Linear(in_features=768, out_features=768, bias=True)</br>
+              (value): Linear(in_features=768, out_features=768, bias=True)</br>
+              (dropout): Dropout(p=0.1, inplace=False)</br>
+            )</br>
+            (output): BertSelfOutput(</br>
+              (dense): Linear(in_features=768, out_features=768, bias=True)</br>
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)</br>
+              (dropout): Dropout(p=0.1, inplace=False)</br>
+            )</br>
+          )</br>
+          (intermediate): BertIntermediate(</br>
+            (dense): Linear(in_features=768, out_features=3072, bias=True)</br>
+            (intermediate_act_fn): GELUActivation()</br>
+          )</br>
+          (output): BertOutput(</br>
+            (dense): Linear(in_features=3072, out_features=768, bias=True)</br>
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)</br>
+            (dropout): Dropout(p=0.1, inplace=False)</br>
+          )</br>
+        )</br>
+      )</br>
+    )</br>
+    (pooler): BertPooler(</br>
+      (dense): Linear(in_features=768, out_features=768, bias=True)</br>
+      (activation): Tanh()</br>
+    )</br>
+  )</br>
+  (dropout): Dropout(p=0.1, inplace=False)</br>
+  (classifier): Linear(in_features=768, out_features=2, bias=True)</br>
 ) </br>
 **Distill - BERT Architechture**</br>
-DistilBertModel(
-  (embeddings): Embeddings(
-    (word_embeddings): Embedding(30522, 768, padding_idx=0)
-    (position_embeddings): Embedding(512, 768)
-    (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
-    (dropout): Dropout(p=0.1, inplace=False)
-  )
-  (transformer): Transformer(
-    (layer): ModuleList(
-      (0-5): 6 x TransformerBlock(
-        (attention): MultiHeadSelfAttention(
-          (dropout): Dropout(p=0.1, inplace=False)
-          (q_lin): Linear(in_features=768, out_features=768, bias=True)
-          (k_lin): Linear(in_features=768, out_features=768, bias=True)
-          (v_lin): Linear(in_features=768, out_features=768, bias=True)
-          (out_lin): Linear(in_features=768, out_features=768, bias=True)
-        )
-        (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
-        (ffn): FFN(
-          (dropout): Dropout(p=0.1, inplace=False)
-          (lin1): Linear(in_features=768, out_features=3072, bias=True)
-          (lin2): Linear(in_features=3072, out_features=768, bias=True)
+DistilBertModel(</br>
+  (embeddings): Embeddings(</br>
+    (word_embeddings): Embedding(30522, 768, padding_idx=0)</br>
+    (position_embeddings): Embedding(512, 768)</br>
+    (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)</br>
+    (dropout): Dropout(p=0.1, inplace=False)</br>
+  )</br>
+  (transformer): Transformer(</br>
+    (layer): ModuleList(</br>
+      (0-5): 6 x TransformerBlock(</br>
+        (attention): MultiHeadSelfAttention(</br>
+          (dropout): Dropout(p=0.1, inplace=False)</br>
+          (q_lin): Linear(in_features=768, out_features=768, bias=True)</br>
+          (k_lin): Linear(in_features=768, out_features=768, bias=True)</br>
+          (v_lin): Linear(in_features=768, out_features=768, bias=True)</br>
+          (out_lin): Linear(in_features=768, out_features=768, bias=True)</br>
+        )</br>
+        (sa_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)</br>
+        (ffn): FFN(</br>
+          (dropout): Dropout(p=0.1, inplace=False)</br>
+          (lin1): Linear(in_features=768, out_features=3072, bias=True)</br>
+          (lin2): Linear(in_features=3072, out_features=768, bias=True)</br>
           (activation): GELUActivation()
         )
         (output_layer_norm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
