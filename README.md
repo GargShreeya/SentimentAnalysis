@@ -51,17 +51,17 @@ BertForSequenceClassification(</br>
 ) </br>
 **Distill - BERT Architechture**</br>
 DistilBertModel(</br>
-  (embeddings): Embeddings(</br>
-    (word_embeddings): Embedding(30522, 768, padding_idx=0)</br>
-    (position_embeddings): Embedding(512, 768)</br>
-    (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)</br>
-    (dropout): Dropout(p=0.1, inplace=False)</br>
-  )</br>
+*Tabspace*(embeddings): Embeddings(</br>
+*Tabspace**Tabspace*(word_embeddings): Embedding(30522, 768, padding_idx=0)</br>
+    *Tabspace**Tabspace*(position_embeddings): Embedding(512, 768)</br>
+    *Tabspace**Tabspace*(LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)</br>
+    *Tabspace**Tabspace*(dropout): Dropout(p=0.1, inplace=False)</br>
+ *Tabspace* )</br>
   (transformer): Transformer(</br>
-    (layer): ModuleList(</br>
-      (0-5): 6 x TransformerBlock(</br>
-        (attention): MultiHeadSelfAttention(</br>
-          (dropout): Dropout(p=0.1, inplace=False)</br>
+   *Tabspace* (layer): ModuleList(</br>
+     *Tabspace**Tabspace* (0-5): 6 x TransformerBlock(</br>
+       *Tabspace**Tabspace**Tabspace* (attention): MultiHeadSelfAttention(</br>
+        *Tabspace**Tabspace**Tabspace**Tabspace*  (dropout): Dropout(p=0.1, inplace=False)</br>
           (q_lin): Linear(in_features=768, out_features=768, bias=True)</br>
           (k_lin): Linear(in_features=768, out_features=768, bias=True)</br>
           (v_lin): Linear(in_features=768, out_features=768, bias=True)</br>
