@@ -4,7 +4,7 @@ NLP Project - Sentiment Analysis by finetuning BERT pretrained model </br>
 **Dataset:** https://huggingface.co/datasets/stanfordnlp/imdb
 **BERT Architechture**</br>
 ![image](https://github.com/user-attachments/assets/ba232e6d-66ee-477f-bbc5-859f66d40669) </br>
-BertForSequenceClassification(</br>
+BERT_model=BertForSequenceClassification(</br>
   (bert): BertModel(</br>
     (embeddings): BertEmbeddings(</br>
       (word_embeddings): Embedding(30522, 768, padding_idx=0)</br>
